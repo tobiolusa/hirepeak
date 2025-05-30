@@ -8,7 +8,7 @@ def login(request):
 def register(request):
     if request.method == 'POST':
         pass
-    return render(request, 'users/register.html')
+    return render(request, 'account/signup.html')
 
 def forget_password(request):
     return render(request, 'users/forget-password.html')
