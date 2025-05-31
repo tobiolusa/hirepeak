@@ -1,0 +1,306 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Register | HirePeak</title>
+    <!-- Stylesheets -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/favicon.png' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="{% static 'images/favicon.png' %}"
+      type="image/x-icon"
+    />
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <!--[if lt IE 9
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
+    ><![endif]-->
+    <!--[if lt IE 9
+      ]><script src="{% static 'js/respond.js' %}"></script
+    ><![endif]-->
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Preloader -->
+      <div class="preloader"></div>
+      <!-- Main Header-->
+      <header class="main-header">
+        <div class="container-fluid">
+          <div class="main-box">
+            <div class="nav-outer">
+              <div class="logo-box">
+                <div class="logo">
+                  <a href="{% url 'loginuser' %}"
+                    ><img
+                      src="{% static 'images/logo-2.svg' %}"
+                      alt="Logo"
+                      title="HirePeak Logo"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="outer-box">
+              <div class="btn-box">
+                <a href="{% url 'loginuser' %}" class="theme-btn btn-style-three"
+                  >Login</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+          <div class="logo">
+            <a href="{% url 'loginuser' %}"
+              ><img
+                src="{% static 'images/logo.svg' %}"
+                alt="Mobile Logo"
+                title="HirePeak Mobile Logo"
+            /></a>
+          </div>
+          <div class="nav-outer clearfix">
+            <div class="outer-box">
+              <div class="login-box">
+                <a href="{% url 'loginuser' %}" class="call-modal"
+                  ><span class="icon-user"></span
+                ></a>
+              </div>
+              <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"
+                ><span class="flaticon-menu-1"></span
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div id="nav-mobile"></div>
+      </header>
+      <!-- Info Section -->
+      <div class="login-section">
+        <div
+          class="image-layer"
+          style="
+            background-image: url('{% static 'images/background/12.jpg' %}');
+          "
+        ></div>
+        <div class="outer-box">
+          <div class="login-form default-form">
+            <div class="form-inner">
+              <h3>Create a Free HirePeak Account</h3>
+              <!-- Display Django Messages -->
+              {% if messages %}
+                <div class="messages">
+                  {% for message in messages %}
+                    <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% else %}alert-info{% endif %} alert-dismissible fade show" role="alert">
+                      {{ message }}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <form method="post" action="{% url 'register' %}" class="signup-form">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="id_email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="id_email"
+                    class="form-control {% if form.email.errors %}is-invalid{% endif %}"
+                    placeholder="Enter Email"
+                    required
+                    value="{{ form.email.value|default_if_none:'' }}"
+                  />
+                  {% if form.email.errors %}
+                    <div class="invalid-feedback">
+                      {% for error in form.email.errors %}
+                        {{ error }}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  <small class="form-text text-muted">{{ form.email.help_text }}</small>
+                </div>
+                <div class="form-group">
+                  <label for="id_username">Username</label>
+                  <input
+                    type="text"
+                    name="username"
+                    id="id_username"
+                    class="form-control {% if form.username.errors %}is-invalid{% endif %}"
+                    placeholder="Enter username"
+                    required
+                    value="{{ form.username.value|default_if_none:'' }}"
+                  />
+                  {% if form.username.errors %}
+                    <div class="invalid-feedback">
+                      {% for error in form.username.errors %}
+                        {{ error }}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  <small class="form-text text-muted">{{ form.username.help_text }}</small>
+                </div>
+                <div class="form-group">
+                  <label for="id_first_name">First Name</label>
+                  <input
+                    type="text"
+                    name="first_name"
+                    id="id_first_name"
+                    class="form-control {% if form.first_name.errors %}is-invalid{% endif %}"
+                    placeholder="Enter first name"
+                    required
+                    value="{{ form.first_name.value|default_if_none:'' }}"
+                  />
+                  {% if form.first_name.errors %}
+                    <div class="invalid-feedback">
+                      {% for error in form.first_name.errors %}
+                        {{ error }}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  <small class="form-text text-muted">{{ form.first_name.help_text }}</small>
+                </div>
+                <div class="form-group">
+                  <label for="id_last_name">Last Name</label>
+                  <input
+                    type="text"
+                    name="last_name"
+                    id="id_last_name"
+                    class="form-control {% if form.last_name.errors %}is-invalid{% endif %}"
+                    placeholder="Enter last name"
+                    required
+                    value="{{ form.last_name.value|default_if_none:'' }}"
+                  />
+                  {% if form.last_name.errors %}
+                    <div class="invalid-feedback">
+                      {% for error in form.last_name.errors %}
+                        {{ error }}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  <small class="form-text text-muted">{{ form.last_name.help_text }}</small>
+                </div>
+                <div class="form-group">
+                  <label for="id_account_type">Account Type</label>
+                  <select
+                    name="account_type"
+                    id="id_account_type"
+                    class="form-control {% if form.account_type.errors %}is-invalid{% endif %}"
+                    required
+                  >
+                    <option value="job_seeker" {% if form.account_type.value == 'job_seeker' %}selected{% endif %}>Job Seeker</option>
+                    <option value="employer" {% if form.account_type.value == 'employer' %}selected{% endif %}>Employer</option>
+                  </select>
+                  {% if form.account_type.errors %}
+                    <div class="invalid-feedback">
+                      {% for error in form.account_type.errors %}
+                        {{ error }}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  <small class="form-text text-muted">{{ form.account_type.help_text }}</small>
+                </div>
+                <div class="form-group">
+                  <label for="id_password1">Password</label>
+                  <input
+                    type="password"
+                    name="password1"
+                    id="id_password1"
+                    class="form-control {% if form.password1.errors %}is-invalid{% endif %}"
+                    placeholder="Password"
+                    required
+                  />
+                  {% if form.password1.errors %}
+                    <div class="invalid-feedback">
+                      {% for error in form.password1.errors %}
+                        {{ error }}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  <small class="form-text text-muted">{{ form.password1.help_text }}</small>
+                </div>
+                <div class="form-group">
+                  <label for="id_password2">Confirm Password</label>
+                  <input
+                    type="password"
+                    name="password2"
+                    id="id_password2"
+                    class="form-control {% if form.password2.errors %}is-invalid{% endif %}"
+                    placeholder="Confirm password"
+                    required
+                  />
+                  {% if form.password2.errors %}
+                    <div class="invalid-feedback">
+                      {% for error in form.password2.errors %}
+                        {{ error }}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  <small class="form-text text-muted">{{ form.password2.help_text }}</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+              </form>
+              {% if form.non_field_errors %}
+                <div class="error-messages">
+                  {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      {{ error }}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <div class="bottom-box">
+                <div class="text">
+                  Already have an account?
+                  <a href="{% url 'loginuser' %}">Log In</a>
+                </div>
+                <!-- Uncomment for social login -->
+                <!--
+                <div class="divider"><span class="or">or</span></div>
+                <div class="btn-box row">
+                  <div class="col-lg-6 col-md-12">
+                    <a href="#" class="theme-btn social-btn-two facebook-btn"><i class="fab fa-facebook-f"></i> Log In via Facebook</a>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                    <a href="#" class="theme-btn social-btn-two google-btn"><i class="fab fa-google"></i> Log In via Gmail</a>
+                  </div>
+                </div>
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/chosen.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/jquery.modal.min.js' %}"></script>
+    <script src="{% static 'js/mmenu.polyfills.js' %}"></script>
+    <script src="{% static 'js/mmenu.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+    <script src="{% static 'js/rellax.min.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
