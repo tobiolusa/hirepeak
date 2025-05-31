@@ -1,12 +1,24 @@
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
+from django.http import HttpResponse
 import logging
 
 # Create your views here.
 
 def loginuser(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request, email=email, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('dashboard')
+        else:
+            messages.error(request, "Invalid username or password")
+            return render(request, 'users/login.html')
     return render(request, 'users/login.html')
 
 logger = logging.getLogger(__name__)
@@ -18,7 +30,7 @@ def register(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Registration Successful, Welcome")
-            return redirect('login')
+            return redirect('loginuser')
         else:
             logger.error(f"Form errors: {form.errors.as_json()}")
             messages.error(request, 'Please, correct the error below')
@@ -28,3 +40,9 @@ def register(request):
 
 def forget_password(request):
     return render(request, 'users/forget-password.html')
+
+def logoutuser(request):
+    logout(request)
+    return redirect(loginuser)
+def dashboard(request):
+    return HttpResponse("Dashboard")
