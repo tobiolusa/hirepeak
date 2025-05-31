@@ -4,7 +4,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.http import HttpResponse
 import logging
-
+from jobs.views import job_dashboard 
 # Create your views here.
 
 def loginuser(request):
@@ -15,7 +15,7 @@ def loginuser(request):
 
         if user is not None:
             login(request, user)
-            return redirect('dashboard')
+            return redirect('job_dashboard')
         else:
             messages.error(request, "Invalid username or password")
             return render(request, 'users/login.html')
