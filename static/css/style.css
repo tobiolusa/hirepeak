@@ -84,7 +84,9 @@ Fonts
 @import url("line-awesome.css");
 @import url("mmenu.css");
 @import url("jquery.fancybox.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
 /*** 
 
 ====================================================================
@@ -115,7 +117,7 @@ body {
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
-  font-family: 'Jost', sans-serif;
+  font-family: '', sans-serif;
   font-style: normal;
 }
 
@@ -183,7 +185,7 @@ p,
 .job-detail p.text,
 .text{
   color: #202124 !important;
-  font-family: Jost;
+  font-family: Giestt;
   line-height: 28px;
 }
 .list-style-three li.dark-color{
@@ -282,7 +284,7 @@ p,
 .ud-btn2{
   color: #202124;
   font-size: 15px;
-  font-family: Jost;
+  font-family: Giestt;
   font-style: normal;
   font-weight: 500;
   line-height: 28px;
@@ -299,7 +301,7 @@ p,
   border-radius: 12px;
   display: inline-block;
   font-size: 15px;
-  font-family: jost;
+  font-family: Geist;
   height: 52px;
   line-height: 52px;
   min-width: 140px;
@@ -409,7 +411,7 @@ p,
 }
 .home22-cta-2.at-home19 .content-column .title{
   color: #FFF;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
@@ -417,7 +419,7 @@ p,
 }
 .home22-cta-2.at-home19 .content-column p{
   color: #FFF;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -443,7 +445,7 @@ p,
 }
 .home22-cta-2 .content-column .title{
   color: #FFF;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 25px;
   font-style: normal;
   font-weight: 500;
@@ -915,7 +917,7 @@ Switches
 .switchbox.at-jlv16 .title{
   color: #202124;
   font-size: 15px;
-  font-family: Jost;
+  font-family: Geist;
   font-style: normal;
   font-weight: 400;
   line-height: 40px;
@@ -7189,7 +7191,7 @@ Job Section
   height: 34px;
   color: #202124;
   font-size: 14px;
-  font-family: Jost;
+  font-family: Geist;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
@@ -7212,7 +7214,7 @@ Job Section
   color: #202124;
   text-edge: cap;
   font-size: 14px;
-  font-family: Jost;
+  font-family: Geist;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
@@ -8492,7 +8494,7 @@ Job Detail Section
   border: 1px solid #ECEDF2;
   color: #202124;
   font-size: 15px;
-  font-family: Jost;
+  font-family: Geist;
   font-style: normal;
   font-weight: 400;
   height: 42px;
@@ -9262,7 +9264,7 @@ Map Listing Item
   font-size: 16px;
   line-height: 22px;
   color: #202124;
-  font-family: Jost;
+  font-family: Geist;
   margin-bottom: 4px;
 }
 
@@ -9741,14 +9743,14 @@ Page Title
 }
 .hero-at-jlv17 h1{
   font-size: 40px;
-  font-family: Jost;
+  font-family: Geist;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 .hero-at-jlv17 p{
   font-size: 15px;
-  font-family: Jost;
+  font-family: Geist;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -9995,7 +9997,7 @@ Registeration Banners
 }
 .banner-style-home22 .title{
   color: #202124;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
@@ -10004,7 +10006,7 @@ Registeration Banners
 }
 .banner-style-home22 p{
   color: #202124;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -12629,7 +12631,7 @@ Candidates Section Two
 .clv7-title{
   color: #202124;
   font-size: 40px;
-  font-family: Jost;
+  font-family: Geist;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -12658,7 +12660,7 @@ Candidates Section Two
   background-color: #fff;
   border: 1px solid #ECEDF2;
   font-size: 14px;
-  font-family: Jost;
+  font-family: Geist;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -12761,7 +12763,7 @@ Candidates Section Two
 .candidate-block-four .job-info.at-clv7 li{
   color: #202124;
   font-size: 15px;
-  font-family: Jost;
+  font-family: Geist;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -14031,7 +14033,7 @@ Ls Outer
   box-shadow: 0px 6px 15px 0px rgba(64, 79, 104, 0.05);
   color: #202124;
   font-size: 15px;
-  font-family: Jost;
+  font-family: Geist;
   font-style: normal;
   font-weight: 400;
   height: 41px;
@@ -14883,7 +14885,7 @@ Pricing Section
 }
 
 .pricing-table .price {
-  font-family: Jost;
+  font-family: Geist;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -17749,7 +17751,7 @@ Product Tabs
 }
 
 .icon-item .content h4 {
-  font-family: "Jost";
+  font-family: "Geist";
   font-size: 18px;
   font-weight: 600;
   line-height: 18px;
@@ -17758,7 +17760,7 @@ Product Tabs
 
 .icon-item .content p {
   margin-top: 10px;
-  font-family: "Jost";
+  font-family: "Geist";
   font-size: 14px;
   line-height: 26px;
 }
@@ -17964,7 +17966,7 @@ Product Tabs
   background-color: #fff;
   border-radius: 60px;
   color: #202124;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -18867,7 +18869,7 @@ Product Tabs
 }
 
 .icon-side.-type-1 .title {
-  font-family: "Jost", sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
@@ -18875,7 +18877,7 @@ Product Tabs
 }
 
 .icon-side.-type-1 .text {
-  font-family: "Jost", sans-serif;
+  font-family: "Geist", sans-serif;
   margin-top: 10px;
   font-size: 14px;
   line-height: 26px;
@@ -18952,7 +18954,7 @@ Product Tabs
 }
 
 .sec-title.-type-3 h2 {
-  font-family: "Jost", sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 30px;
   font-weight: 500;
   line-height: 1.2;
@@ -18961,7 +18963,7 @@ Product Tabs
 
 .sec-title.-type-3 .text {
   margin-top: 12px !important;
-  font-family: "Jost", sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 15px;
   line-height: 1;
   color: #696969;
@@ -18969,7 +18971,7 @@ Product Tabs
 
 .sec-title.-type-3 .big-text {
   margin-top: 64px;
-  font-family: "Jost", sans-serif;
+  font-family: "Geist", sans-serif;
   color: #202124;
   font-size: 20px;
   font-style: normal;
@@ -19020,7 +19022,7 @@ Product Tabs
 
 .icon-item.-type-4 .content h4 {
   color: #202124;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.2;
@@ -19028,7 +19030,7 @@ Product Tabs
 
 .icon-item.-type-4 .content p {
   margin-top: 0 !important;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   line-height: 26px;
 }
@@ -19052,7 +19054,7 @@ Product Tabs
 }
 
 .blog-block.-type-2 .block-header > div:nth-child(1) {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 30px;
   font-weight: 500;
   line-height: 1.2;
@@ -19060,7 +19062,7 @@ Product Tabs
 }
 
 .blog-block.-type-2 .block-header > div:nth-child(2) {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 18px;
   font-weight: 400;
   line-height: 1;
@@ -19072,7 +19074,7 @@ Product Tabs
 }
 
 .blog-block.-type-2 .block-content h4 {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
@@ -19087,7 +19089,7 @@ Product Tabs
 }
 
 .blog-block.-type-2 .block-footer > div {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -19095,7 +19097,7 @@ Product Tabs
 }
 
 .blog-block.-type-2 .block-footer > a {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -19141,7 +19143,7 @@ Product Tabs
 }
 
 .banner-section.-type-15 .title-box h3 {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 50px;
   font-weight: 400;
   line-height: 1.2;
@@ -19155,7 +19157,7 @@ Product Tabs
 }
 
 .banner-section.-type-15 .title-box .text {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
@@ -19183,7 +19185,7 @@ Product Tabs
 }
 
 .banner-section.-type-15 .fun-fact-section .counter-column .count-box span {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 30px;
   font-weight: 400;
   line-height: 30px;
@@ -19191,7 +19193,7 @@ Product Tabs
 }
 
 .banner-section.-type-15 .fun-fact-section .counter-column .counter-title {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
@@ -19225,7 +19227,7 @@ Product Tabs
 
 .work-block.-type-3 h5 {
   margin-top: 29px;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -19234,7 +19236,7 @@ Product Tabs
 
 .work-block.-type-3 p {
   margin-top: 25px;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
@@ -19284,7 +19286,7 @@ Product Tabs
 }
 
 .theme-btn.btn-white-type-2 {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 15px;
   font-weight: 600;
   line-height: 1;
@@ -19314,7 +19316,7 @@ Product Tabs
 .btn-cv {
   display: inline-block;
   vertical-align: middle;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -19527,7 +19529,7 @@ Product Tabs
 }
 
 .main-footer.style-six.-type-2 .footer-text p {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   font-weight: 400;
   line-height: 28px;
@@ -19543,7 +19545,7 @@ Product Tabs
 }
 
 .main-footer.style-six.-type-2 .footer-item .title {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 15px;
   font-weight: 400;
   line-height: 30px;
@@ -19551,7 +19553,7 @@ Product Tabs
 }
 
 .main-footer.style-six.-type-2 .footer-item .subtitle {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -19619,7 +19621,7 @@ Product Tabs
 }
 
 .banner-section-four.-type-16 .content-box .title-box h3 {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 50px;
   font-weight: 700;
   line-height: 1.2;
@@ -19633,7 +19635,7 @@ Product Tabs
 
 .banner-section-four.-type-16 .content-box .title-box p {
   margin-top: 20px;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -19712,7 +19714,7 @@ Product Tabs
 
 .banner-section-four.-type-16 .features-icons .item .title {
   margin-top: 15px;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
@@ -19783,7 +19785,7 @@ Product Tabs
 
 .work-block.-type-4 .title {
   margin-top: 32px;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -19792,7 +19794,7 @@ Product Tabs
 }
 
 .work-block.-type-4 .text {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -19869,7 +19871,7 @@ Product Tabs
 }
 
 .testimonial-section.-type-2 .info-box .content .name {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 16px;
   font-weight: 600;
   line-height: 1;
@@ -19878,7 +19880,7 @@ Product Tabs
 
 .testimonial-section.-type-2 .info-box .content .designation {
   margin-top: 4px;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   line-height: 26px;
 }
@@ -19886,7 +19888,7 @@ Product Tabs
 .testimonial-section.-type-2 .text {
   margin: 0;
   margin-top: 40px;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   font-weight: 400;
   line-height: 28px;
@@ -19954,7 +19956,7 @@ Product Tabs
 
 .cta.-type-2 .title {
   color: white;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 22px;
   font-weight: 600;
   line-height: 22px;
@@ -19963,7 +19965,7 @@ Product Tabs
 .cta.-type-2 .text {
   margin-top: 15px;
   color: white;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 13px;
   font-weight: 400;
   line-height: 24px;
@@ -20065,7 +20067,7 @@ Product Tabs
 }
 
 .banner-section-three.-type-17 .content-column .title-box h3 {
-  font-family: "Jost", sans-serif;
+  font-family: "Geist", sans-serif;
   font-size: 50px;
   font-weight: 700;
   line-height: 1.2;
@@ -20079,7 +20081,7 @@ Product Tabs
 }
 
 .banner-section-three.-type-17 .content-column .title-box p {
-  font-family: "Jost", sans-serif;
+  font-family: "Geist", sans-serif;
   margin-top: 20px !important;
   font-size: 15px;
   font-style: normal;
@@ -20197,7 +20199,7 @@ Product Tabs
 }
 
 .subscribe-section-two.-type-5 .sec-title h2 {
-  font-family: Jost;
+  font-family: Geist;
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
@@ -20206,7 +20208,7 @@ Product Tabs
 
 .subscribe-section-two.-type-5 .sec-title .text {
   margin-top: 16px;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;
@@ -20346,7 +20348,7 @@ html {
 
 .tab-menu .title {
   margin-top: 16px;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 18px;
   line-height: 1;
   transition: all 0.2s ease-out;
@@ -22029,7 +22031,7 @@ Work Section
   border: 1px solid #F5F2EA;
   color: #202124;
   display: inline-block;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -22099,7 +22101,7 @@ Work Section
   border: 3px solid #fff;
   border-radius: 50%;
   color: #FFF;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -22138,7 +22140,7 @@ Work Section
 }
 .testimonial-style2 .testi-text {
   color: #181A1F;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -22147,7 +22149,7 @@ Work Section
 }
 .testimonial-style2 .name{
   color: #202124;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -22161,7 +22163,7 @@ Work Section
 }
 .testimonial-style2 .design {
   color: #202124;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -22199,7 +22201,7 @@ Work Section
   background-color: #F5F7FC;
   border-radius: 50%;
   color: #202124;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -22228,7 +22230,7 @@ Work Section
 }
 .findjob-process .wrapper .title{
   color: #202124;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 22px;
   font-style: normal;
   font-weight: 500;
@@ -22237,7 +22239,7 @@ Work Section
 }
 .findjob-process .wrapper p{
   color: #202124;
-  font-family: Jost;
+  font-family: Geist;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
