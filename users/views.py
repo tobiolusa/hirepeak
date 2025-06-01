@@ -30,7 +30,7 @@ def register(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Registration Successful, Welcome")
-            return redirect('loginuser')
+            return redirect('job_dashboard')
         else:
             logger.error(f"Form errors: {form.errors.as_json()}")
             messages.error(request, 'Please, correct the error below')
