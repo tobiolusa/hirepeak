@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 import users.views
-
+from jobs.forms import EmployerProfileForm 
 
 @login_required
 def job_dashboard(request):
@@ -9,6 +9,12 @@ def job_dashboard(request):
 
 @login_required
 def company_profile(request):
+    
+    if request.method == 'POST':
+        form = EmployerProfileForm(request.POST)
+        if form.is_valid():
+            form.save()
+
     return render(request, 'jobs/dashboard-company-profile.html')
 
 @login_required

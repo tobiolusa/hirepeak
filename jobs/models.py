@@ -14,11 +14,34 @@ class EmployerProfile(models.Model):
     logo = models.ImageField( upload_to="company_logo/", blank=True, null=True)
 
     def __str__(self):
-        return f"{self.user} hiring from {self.company_name}"
+        return f"{self.user} hiring {self.company_name}"
     
-# class JobPost(models.Model):
-#     company = models.ForeignKey(EmployerProfile, on_delete=models.CASCADE,related_name="job_posts")
-#     job_title = models.CharField(max_length=255)
-#     description = models.TextField()
-#     industry = models.Choices()
-#     experience = models.Choices
+class JobPosting(models.Model):
+    company = models.ForeignKey(EmployerProfile, on_delete=models.CASCADE,related_name="job_posts")
+    job_title = models.CharField(max_length=255)
+    description = models.TextField()
+    experience_level = models.CharField(max_length=100, choices=[
+        ('entry_level', 'Entry-Level'),
+        ('junior', 'Junior'),
+        ('mid-level', 'Mid-level'),
+        ('senior', 'Senior')
+    ])
+    salary_range = models.CharField(max_length=200, blank=True)
+    location = models.CharField(max_length=100)
+    employment_type = models.CharField(max_length=50, choices=[
+        ('full_time', 'Full-Time'),
+        ('part_time', 'Part-Time'),
+        ('contract', 'Contract'),
+        ('freelance', 'Freelance')
+    ])
+    job_mode = models.CharField(max_length=200, choices=[
+        ('remote', 'Remote'),
+        ('onsite', 'Onsite'),
+        ('hybrid', 'Hybrid')
+    ])
+    requirement = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+
+    def __str__(self):
+        return self.job_title
