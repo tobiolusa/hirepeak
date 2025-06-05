@@ -3,7 +3,7 @@ from django.conf import settings
 
 # Create your models here.
 class EmployerProfile(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, limit_choices_to={'account_type': 'employer'})
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, limit_choices_to={'account_type': 'employer'}, null=False)
     company_name = models.CharField(max_length=255)
     company_email = models.EmailField(unique=True)
     industry = models.CharField(max_length=255)
@@ -14,7 +14,7 @@ class EmployerProfile(models.Model):
     logo = models.ImageField( upload_to="company_logo/", blank=True, null=True)
 
     def __str__(self):
-        return f"{self.user.username.capitalize()} is hiring from {self.company_name.capitalize()} company"
+        return f"{self.company_name.capitalize()}"
     
 class JobPosting(models.Model):
     company = models.ForeignKey(EmployerProfile, on_delete=models.CASCADE,related_name="job_posts")

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from jobs.models import JobPosting
 
 # Create your views here.
 def homepage(request):
@@ -6,3 +7,7 @@ def homepage(request):
 
 def hiring_companies(request):
     return render(request, 'core/hiring-company.html')
+
+def browse_jobs(request):
+    jobpost_listings = JobPosting.objects.all().order_by('-created_at')
+    return render(request, 'core/browse-jobs.html', {'jobpost_listings': jobpost_listings})
