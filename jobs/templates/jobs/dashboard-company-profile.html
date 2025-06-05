@@ -1,101 +1,128 @@
-{% extends 'jobs/base.html' %}
+  {% extends 'jobs/base.html' %}
 
-{% block content %}
-  <!-- Dashboard -->
-  <section class="user-dashboard">
-    <div class="dashboard-outer">
-      <div class="upper-title-box">
-        <h3>Company Profile!</h3>
-        <div class="text">Ready to jump back in?</div>
-      </div>
+  {% block content %}
+    <!-- Dashboard -->
+    <section class="user-dashboard">
+      <div class="dashboard-outer">
+        <div class="upper-title-box">
+          <h3>Company Profile!</h3>
+          <div class="text">Ready to jump back in?</div>
+        </div>
 
-      <div class="row">
-        <div class="col-lg-12">
-          <!-- Ls widget -->
-          <div class="ls-widget">
-            <div class="tabs-box">
-              <div class="widget-title">
-                <h4>My Profile</h4>
-              </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- Ls widget -->
+            <div class="ls-widget">
+              <div class="tabs-box">
+                <div class="widget-title">
+                  <h4>My Profile</h4>
+                </div>
 
-              <div class="widget-content">
-                {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+                <div class="widget-content">
+                
 
-               <form class="default-form" method="post" enctype="multipart/form-data">
+ <form class="default-form" method="post" action="{% url 'company_profile' %}" enctype="multipart/form-data">
   {% csrf_token %}
-  <div class="row">
 
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+
+
+
+  <div class="row">
     <!-- Company Name -->
     <div class="form-group col-lg-6 col-md-12">
-      <label>Company Name</label>
-      <input type="text" name="company_name" placeholder="Amazon" required>
+      <label for="{{ form.company_name.id_for_label }}">Company Name</label>
+      {{ form.company_name }}
+      {% if form.company_name.errors %}
+        <div class="text-danger">{{ form.company_name.errors.0 }}</div>
+      {% endif %}
     </div>
 
     <!-- Company Email -->
     <div class="form-group col-lg-6 col-md-12">
-      <label>Company Email</label>
-      <input type="email" name="company_email" placeholder="career@amazon.com" required>
+      <label for="{{ form.company_email.id_for_label }}">Company Email</label>
+      {{ form.company_email }}
+      {% if form.company_email.errors %}
+        <div class="text-danger">{{ form.company_email.errors.0 }}</div>
+      {% endif %}
     </div>
 
     <!-- Industry -->
     <div class="form-group col-lg-6 col-md-12">
-      <label>Industry</label>
-      <input type="text" name="industry" placeholder="Technology" required>
+      <label for="{{ form.industry.id_for_label }}">Industry</label>
+      {{ form.industry }}
+      {% if form.industry.errors %}
+        <div class="text-danger">{{ form.industry.errors.0 }}</div>
+      {% endif %}
     </div>
 
-    <!-- Team Size -->
+    <!-- Company Size -->
     <div class="form-group col-lg-6 col-md-12">
-      <label>Company Size</label>
-      <input type="number" name="size" placeholder="50" min="1" required>
+      <label for="{{ form.size.id_for_label }}">Company Size</label>
+      {{ form.size }}
+      {% if form.size.errors %}
+        <div class="text-danger">{{ form.size.errors.0 }}</div>
+      {% endif %}
     </div>
 
     <!-- About Company -->
     <div class="form-group col-lg-12 col-md-12">
-      <label>About Company</label>
-      <textarea name="company_about" placeholder="Describe your company..."></textarea>
+      <label for="{{ form.company_about.id_for_label }}">About Company</label>
+      {{ form.company_about }}
+      {% if form.company_about.errors %}
+        <div class="text-danger">{{ form.company_about.errors.0 }}</div>
+      {% endif %}
     </div>
 
     <!-- Location -->
     <div class="form-group col-lg-6 col-md-12">
-      <label>Location</label>
-      <input type="text" name="location" placeholder="Lagos, Nigeria" required>
+      <label for="{{ form.location.id_for_label }}">Location</label>
+      {{ form.location }}
+      {% if form.location.errors %}
+        <div class="text-danger">{{ form.location.errors.0 }}</div>
+      {% endif %}
     </div>
 
     <!-- Website -->
     <div class="form-group col-lg-6 col-md-12">
-      <label>Website</label>
-      <input type="url" name="website" placeholder="https://example.com">
+      <label for="{{ form.website.id_for_label }}">Website</label>
+      {{ form.website }}
+      {% if form.website.errors %}
+        <div class="text-danger">{{ form.website.errors.0 }}</div>
+      {% endif %}
     </div>
 
     <!-- Company Logo -->
     <div class="form-group col-lg-6 col-md-12">
-      <label>Company Logo</label>
-      <input type="file" name="logo" accept="image/*">
+      <label for="{{ form.logo.id_for_label }}">Company Logo</label>
+      {{ form.logo }}
+      {% if form.logo.errors %}
+        <div class="text-danger">{{ form.logo.errors.0 }}</div>
+      {% endif %}
     </div>
 
-    <!-- Submit -->
+    <!-- Submit Button -->
     <div class="form-group col-lg-12 col-md-12">
       <button class="theme-btn btn-style-one" type="submit">Update Profile</button>
     </div>
-
   </div>
 </form>
- 
 
-                
-                
+
+  
+
+                  
+                  
+                </div>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
-      </div>
-    </section>
-    <!-- End Dashboard -->
-{% endblock %}
+      </section>
+      <!-- End Dashboard -->
+  {% endblock %}

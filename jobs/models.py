@@ -7,14 +7,14 @@ class EmployerProfile(models.Model):
     company_name = models.CharField(max_length=255)
     company_email = models.EmailField(unique=True)
     industry = models.CharField(max_length=255)
-    size = models.IntegerField(max_length=4)
+    size = models.IntegerField()
     company_about = models.TextField(blank=True, null=True)
     location = models.CharField(max_length=255)
     website = models.URLField(blank=True, null=True)
     logo = models.ImageField( upload_to="company_logo/", blank=True, null=True)
 
     def __str__(self):
-        return f"{self.user} hiring {self.company_name}"
+        return f"{self.user.username.capitalize()} is hiring from {self.company_name.capitalize()} company"
     
 class JobPosting(models.Model):
     company = models.ForeignKey(EmployerProfile, on_delete=models.CASCADE,related_name="job_posts")
