@@ -55,7 +55,13 @@ def post_job(request):
 
 @login_required
 def manage_job(request):
-    return render(request,'jobs/dashboard-manage-job.html')
+    try: 
+
+        company = EmployerProfile.objects.get(user=request.user)
+        my_jobs = JobPosting.objects.filter(company=company)
+    except EmployerProfile.DoesNotExist:
+        my_jobs = []
+    return render(request,'jobs/dashboard-manage-job.html', {'my_jobs' : my_jobs})
 
 @login_required
 def all_applicant(request):
