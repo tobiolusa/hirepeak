@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from jobs.models import JobPosting
+from jobs.models import JobPosting, EmployerProfile
 
 # Create your views here.
 def homepage(request):
