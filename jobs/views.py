@@ -7,9 +7,12 @@ from jobs.models import EmployerProfile, JobPosting
 
 @login_required
 def job_dashboard(request):
-    company = EmployerProfile.objects.get(user=request.user)
-    job_count = JobPosting.objects.filter(company=company).count()
-    return render(request, 'jobs/dashboard.html', {'job_count' : job_count })
+    try: 
+        company = EmployerProfile.objects.get(user=request.user)
+        job_count = JobPosting.objects.filter(company=company).count()
+        return render(request, 'jobs/dashboard.html', {'job_count' : job_count })
+    except EmployerProfile.DoesNotExist:
+        return redirect('company_profile')
 
 
 @login_required
