@@ -25,7 +25,7 @@
                
                 </div>
 
-         <form method="POST" class="default-form">
+ <form method="POST" action="{% url 'post_job' %}" class="default-form">
   {% csrf_token %}
   <div class="row">
     

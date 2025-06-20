@@ -44,17 +44,22 @@ def company_profile(request):
 
 @login_required
 def post_job(request):
+    try:
+        employer_profile = EmployerProfile.objects.get(user=request.user)
+    except EmployerProfile.DoesNotExist:
+        return redirect('company_profile')
+
     if request.method == 'POST':
         form = JobPostingForm(request.POST)
         if form.is_valid():
             job_posting = form.save(commit=False)
-            job_posting.company = request.user
+            job_posting.company = employer_profile 
             job_posting.save()
-            return redirect('manage-job')
+            return redirect('manage_job')
     else:
         form = JobPostingForm()
 
-    return render(request,'jobs/dashboard-post-job.html', {'form': form})
+    return render(request, 'jobs/dashboard-post-job.html', {'form': form})
 
 @login_required
 def manage_job(request):
