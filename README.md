@@ -1,4 +1,4 @@
-# Hire
+# Hirepeak 
 
 **Hirepeak** is a full-stack web application designed for employers and job seekers.  
 It allows companies to post job opportunities at various levels including intern, intermediate, and senior roles.  
